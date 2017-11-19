@@ -3,10 +3,6 @@ package fr.orsys.biblio.service.impl;
 import java.util.Date;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
-
 import fr.orsys.biblio.dao.AdherentDao;
 import fr.orsys.biblio.dao.EmpruntDao;
 import fr.orsys.biblio.dao.LivreDao;
@@ -27,8 +23,8 @@ public class BibliothequeImpl implements Bibliotheque {
 	AdherentDao adherentDao = new AdherentDaoMemory();
 	EmpruntDao empruntDao = new EmpruntDaoMemory();
 	
-	@Autowired
-	public BibliothequeImpl(@Value("3")   Integer maxLivreIdentique, @Value("5") Integer maxEmpruntAdherent) {
+	
+	public BibliothequeImpl(Integer maxLivreIdentique,  Integer maxEmpruntAdherent) {
 		this.maxLivreIdentique = maxLivreIdentique; 
 		this.maxEmpruntAdherent = maxEmpruntAdherent;
 	}

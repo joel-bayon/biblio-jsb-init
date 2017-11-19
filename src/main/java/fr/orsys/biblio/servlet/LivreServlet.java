@@ -71,7 +71,6 @@ public class LivreServlet extends HttpServlet {
 	
 		}
 		request.getRequestDispatcher(nextView).forward(request, response);
-		request.getRequestDispatcher(nextView).include(request, response);
 		
 	}
 
