@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>hello</display-name>
+  <servlet>
+    <servlet-name>hello</servlet-name>
+    <servlet-class>fr.orsys.biblio.servlet.HelloServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>hello</servlet-name>
+    <url-pattern>/welcome</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>authentification</servlet-name>
+    <servlet-class>fr.orsys.biblio.servlet.AuthentificationServlet</servlet-class>
+    <init-param>
+      <param-name>userFile</param-name>
+      <param-value>/WEB-INF/users.properties</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>authentification</servlet-name>
+    <url-pattern>/authentification/login</url-pattern>
+    <url-pattern>/authentification/validation</url-pattern>
+    <url-pattern>/authentification/logout</url-pattern>
+  </servlet-mapping>
+  <session-config>
+    <session-timeout>0</session-timeout>
+  </session-config>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+</web-app>
